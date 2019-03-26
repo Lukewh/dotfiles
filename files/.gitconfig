@@ -1,0 +1,8 @@
+[user]
+	email = luke@lukewh.com
+	name = Lukewh
+[core]
+	excludesfile = ~/.gitignore
+[color]
+	diff = auto
+	status = auto
