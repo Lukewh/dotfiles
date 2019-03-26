@@ -20,6 +20,7 @@
 - [autojump](https://github.com/wting/autojump)
 - [zsh](https://www.zsh.org/)
 - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+- [font-awesome](https://fontawesome.com/)
 
 ## snaps
 

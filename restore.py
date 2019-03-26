@@ -16,7 +16,6 @@ home_dir = expanduser("~")
 for file in files:
     dest_path = "/".join([
         home_dir,
-        "test",
         file
     ])
 
