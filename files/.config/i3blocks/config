@@ -29,6 +29,12 @@ separator_block_width=15
 separator=true
 markup=none
 
+# Spotify
+[spotify]
+label=
+command=/home/luke/.config/i3blocks/scripts/spotify/spotify
+interval=5
+
 # Volume indicator
 #
 # The first parameter sets the step (and units to display)
