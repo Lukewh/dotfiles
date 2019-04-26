@@ -352,3 +352,6 @@ exec "~/.config/i3/input-devices.sh"
 
 exec emacs --daemon
 
+exec --no-startup-id wavebox
+for_window [class="wavebox"] floating enable; move scratchpad; scratchpad show; move position 100px 100px; move scratchpad
+

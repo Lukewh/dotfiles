@@ -21,6 +21,7 @@
 - [zsh](https://www.zsh.org/)
 - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 - [font-awesome](https://fontawesome.com/)
+- [playerctl](https://github.com/acrisci/playerctl)
 
 ## snaps
 
@@ -42,3 +43,4 @@
 - [snapcraft](https://snapcraft.io/snapcraft)
 - [surl](https://snapcraft.io/surl)
 - [docker](https://snapcraft.io/docker)
+- [wavebox](https://snapcraft.io/wavebox)

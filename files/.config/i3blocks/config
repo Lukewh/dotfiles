@@ -32,7 +32,7 @@ markup=none
 # Spotify
 [spotify]
 label=
-command=/home/luke/.config/i3blocks/scripts/spotify/spotify
+command=/home/luke/.config/i3blocks/scripts/spotify/spotify.py
 interval=5
 
 # Volume indicator
