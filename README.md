@@ -22,6 +22,8 @@
 - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 - [font-awesome](https://fontawesome.com/)
 - [playerctl](https://github.com/acrisci/playerctl)
+- [essential-pragmata-pro](https://www.fsd.it/shop/fonts/pragmatapro/)
+- [keychain](https://www.funtoo.org/Keychain)
 
 ## snaps
 
