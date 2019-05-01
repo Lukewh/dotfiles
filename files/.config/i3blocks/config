@@ -127,6 +127,12 @@ markup=pango
 command=date '+%d-%m-%Y %I:%M'
 interval=5
 
+# NordVPN
+[nordvpn]
+command=/home/luke/.config/i3blocks/scripts/nordvpn/nordvpn.py $button
+interval=30
+markup=pango
+
 # Generic media player support
 #
 # This displays "ARTIST - SONG" if a music is playing.

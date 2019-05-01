@@ -175,6 +175,8 @@ bindsym $mod+Shift+o mode $moveWorkspace
 mode $moveWorkspace {
 	bindsym Left move workspace to output left
 	bindsym Right move workspace to output right	
+        bindsym Up move workspace to output up
+        bindsym Down move workspace to output down
 
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
@@ -324,9 +326,6 @@ bindsym $mod+F3 exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
-# Touchpad controls
-bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
-
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
 bindsym $mod+Home exec playerctl play
@@ -353,5 +352,5 @@ exec "~/.config/i3/input-devices.sh"
 exec emacs --daemon
 
 exec --no-startup-id wavebox
-for_window [class="wavebox"] floating enable; move scratchpad; scratchpad show; move position 100px 100px; move scratchpad
+for_window [class="wavebox"] move scratchpad
 

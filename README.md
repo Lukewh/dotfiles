@@ -10,20 +10,20 @@
 
 ## software
 
-- [i3](https://i3wm.org/)
-- [i3blocks](https://github.com/vivien/i3blocks)
-- [i3status](https://i3wm.org/i3status/manpage.html)
-- [feh](https://feh.finalrewind.org/)
-- [rofi](https://github.com/davatorium/rofi)
-- [direnv](https://direnv.net/)
+- [i3](https://i3wm.org/) - `sudo apt install i3`
+- [i3blocks](https://github.com/vivien/i3blocks) - `sudo apt install i3blocks`
+- [feh](https://feh.finalrewind.org/) - `sudo apt install feh`
+- [rofi](https://github.com/davatorium/rofi) - `sudo apt install rofi`
+- [direnv](https://direnv.net/) - `sudo apt install direnv`
 - [fzf](https://github.com/junegunn/fzf)
-- [autojump](https://github.com/wting/autojump)
-- [zsh](https://www.zsh.org/)
+- [autojump](https://github.com/wting/autojump) - `sudo apt install autojump`
+- [zsh](https://www.zsh.org/) - `sudo apt install zsh`
 - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-- [font-awesome](https://fontawesome.com/)
-- [playerctl](https://github.com/acrisci/playerctl)
+- [font-awesome](https://fontawesome.com/) - `sudo apt install fonts-font-awesome`
+- [playerctl](https://github.com/acrisci/playerctl) - `sudo apt install playerctl`
 - [essential-pragmata-pro](https://www.fsd.it/shop/fonts/pragmatapro/)
-- [keychain](https://www.funtoo.org/Keychain)
+- [keychain](https://www.funtoo.org/Keychain) - `sudo apt install keychain`
+- [nordvpn](https://nordvpn.com) - `sudo apt install nordvpn`
 
 ## snaps
 
