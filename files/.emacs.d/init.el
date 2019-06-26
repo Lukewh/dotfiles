@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (company buffer-move yaml-mode rjsx-mode org-bullets which-key try use-package))))
+    (prettier-js pretter-js company buffer-move yaml-mode rjsx-mode org-bullets which-key try use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -63,6 +63,10 @@
   :ensure t
   :mode "\\.js\\'")
 
+(use-package prettier-js
+  :ensure t)
+(add-hook 'rjsx-mode-hook 'prettier-js-mode)
+
 (use-package yaml-mode
   :ensure t
   :mode "\\.ya?ml\\'")
@@ -82,5 +86,9 @@
 (setq ido-everywhere t)
 (ido-mode 1)
 
+;; Programming hooks
 (add-hook 'prog-mode-hook 'set-environment)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
+;; Prevent ctrl + z fucking things up
 (global-unset-key (kbd "C-z"))
