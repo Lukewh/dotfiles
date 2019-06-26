@@ -1,0 +1,13 @@
+
+* Lesson 1
+  Introducing the series and setting up the package manager
+  - Show melpa
+  - set up melpa
+  - installed use-package
+  - installed which-key
+* Lesson 2
+  Show some org-mode
+  - review init.el
+  - set up Readme.org
+* Links
+  - [[http://lukewh.com][Lukewh.com]]

@@ -1,11 +1,3 @@
-(load-theme 'tango-dark)
-(global-linum-mode t)
-(require 'package)
-(add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/"))
-(package-initialize)
-(tool-bar-mode -1)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -13,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (company-jedi company use-package flycheck neotree projectile which-key))))
+    (company buffer-move yaml-mode rjsx-mode org-bullets which-key try use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -21,42 +13,72 @@
  ;; If there is more than one, they won't work right.
  )
 
-(use-package which-key
-  :ensure t
-  :config
-  (which-key-mode))
+(defun indentation (n)
+  (setq-local js-indent-level n))
 
-(use-package projectile
-  :ensure t
-  :config
-  (projectile-mode +1)
-  :bind-keymap
-  ("s-p" . projectile-command-map)
-  ("C-c p" . projectile-command-map))
+(defun set-environment ()
+  (interactive)
+  (message "2 space indentation")
 
-(use-package neotree
+  (setq indent-tabs-mode nil)
+
+  (indentation 2))
+
+(setq inhibit-startup-message t)
+
+(require 'package)
+(setq package-enable-at-startup nil)
+(add-to-list 'package-archives
+	     '("melpa" . "https://melpa.org/packages/"))
+
+(package-initialize)
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(use-package try
   :ensure t)
 
-(use-package flycheck
+(use-package which-key
   :ensure t
-  :init (global-flycheck-mode))
+  :config (which-key-mode))
 
-(use-package web-mode
+(use-package treemacs
   :ensure t
-  :config
-  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode)))
+  :bind
+  (:map global-map
+	([f8] . treemacs)))
+
+(use-package buffer-move
+  :ensure t)
 
 (use-package company
   :ensure t)
 
-(add-hook 'after-init-hook 'global-company-mode)
+;; Modes
+(use-package rjsx-mode
+  :ensure t
+  :mode "\\.js\\'")
 
-(use-package company-jedi
-  :ensure t)
+(use-package yaml-mode
+  :ensure t
+  :mode "\\.ya?ml\\'")
 
-;; neotree - jump to opened file
-(setq neo-smart-open t)
+;; Themes
+(use-package doom-themes
+  :ensure t
+  :config (load-theme 'doom-one t))
 
-;; change neotree root when projectile project changes
-(setq projectile-switch-project-action 'neotree-projectile-action)
+;; Org-mode stuff
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
+(setq indo-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+
+(add-hook 'prog-mode-hook 'set-environment)
+(global-unset-key (kbd "C-z"))

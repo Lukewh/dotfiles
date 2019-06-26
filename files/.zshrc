@@ -105,6 +105,7 @@ PATH=$PATH:/snap/bin/:/home/luke/bin/
 
 alias yt="~/bin/youtube.sh"
 alias teamspeak="~/bin/TeamSpeak3-Client-linux_amd64/ts3client_runscript.sh"
+alias e="emacsclient -c -n"
 
 . /usr/share/autojump/autojump.sh
 
