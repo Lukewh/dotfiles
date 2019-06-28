@@ -353,4 +353,3 @@ exec emacs --daemon
 
 exec --no-startup-id wavebox
 for_window [class="wavebox"] move scratchpad
-

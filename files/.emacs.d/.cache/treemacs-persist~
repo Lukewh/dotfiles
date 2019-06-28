@@ -3,3 +3,5 @@
  - path :: /home/luke/Projects/Canonical/snapcraft.io
 ** olaris-react
  - path :: /home/luke/Projects/Personal/olaris-react
+** olaris-snap
+ - path :: /home/luke/Projects/Personal/olaris-snap

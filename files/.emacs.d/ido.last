@@ -2,6 +2,7 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/home/luke/Projects/Canonical/snapcraft.io/static/js/publisher/release/" . "components/")
  ("/home/luke/Projects/Personal/" . "olaris-react/")
  ("/home/luke/Projects/Canonical/snapcraft.io/" . "webapp/")
  ("/home/luke/Projects/Canonical/" . "snapcraft.io/")
@@ -12,33 +13,63 @@
 ;; ----- ido-work-directory-list -----
 (
  "/home/luke/.emacs.d/"
+ "/home/luke/Projects/Canonical/snapcraft.io/static/js/publisher/release/"
+ "/home/luke/Projects/Canonical/snapcraft.io/static/js/publisher/release/components/"
+ "/home/luke/Projects/Canonical/snapcraft.io/webapp/api/"
+ "/home/luke/Projects/Canonical/snapcraft.io/webapp/publisher/snaps/"
+ "/home/luke/Projects/Canonical/snapcraft.io/static/js/publisher/release/reducers/"
+ "/home/luke/Projects/Canonical/snapcraft.io/static/js/publisher/release/actions/"
  "/home/luke/Projects/Canonical/snapcraft.io/webapp/"
 )
 
 ;; ----- ido-work-file-list -----
 (
  "init.el"
+ "releasesController.js"
+ "notification.js"
+ "dashboard.py"
+ "views.py"
+ "index.js"
+ "modal.js"
  "ido.last"
  "app.py"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/luke/.emacs.d/" (23826 495 272852 288000) "ido.last~" "../" "Readme.org" "init.el" "Readme.org~" "elpa/" "auto-save-list/" "ido.last" ".cache/" "init.el~" "./")
+ ("/home/luke/" (23827 40537 794819 382000) ".zsh_history" ".pylint.d/" ".vim/" ".ICEauthority" "blocks.blend" ".snap/" ".node-gyp/" ".zcompdump" ".screenlayout/" ".fzf.zsh" ".fonts/" ".local/" ".zcompdump-graeme-nolegs-5.4.2" ".config/" ".vimrc" ".yarn/" ".pki/" ".gitconfig" "../" ".sudo_as_admin_successful" "Projects/" "Public/" ".viminfo" "Documents/" "Peek 2019-06-26 09-16.gif" "obs-log.txt" ".doom.d/" "Pictures/" "stale_outputs_checked" ".vscode/" ".IntelliJIdea2019.1/" ".steampath" ".bashrc" "Music/" ".ssh/" ".gphoto/" ".keychain/" ".dbus/" ".pulse-cookie" ".lesshst" ".steam/" ".profile" ".openttd/" ".bash_history" "Templates/" ".ssb/" "snap/" ".gnupg/" ".emacs.d/" "bin/" ".gitignore" ".npm/" ".mozilla/" ".spacemacs" ".fzf.bash" ".venvs/" ".oh-my-zsh/" "Peek 2019-06-26 09-12.gif" ".cache/" ".java/" "Screenshot from 2019-06-24 08-57-21.png" ".fehbg" "./" ".zshrc.pre-oh-my-zsh" "Desktop/" "Downloads/" ".fzf/" ".zshrc")
 
- ("/home/luke/Projects/Canonical/snapcraft.io/static/js/publisher/release/components/" (23826 566 361477 676000) "historyPanel.js" "../" "releasesTableCell.js" "contextualMenu.js" "promoteMenu.js" "releasesConfirm.js" "releasesTableRow.js" "revisionsListRow.js" "notification.js" "releasesTable.js" "channelMenu.js" "releasesHeading.js" "./" "availableRevisionsMenu.js" "revisionsList.js" "devmodeIcon.js")
+ ("/home/luke/Projects/Canonical/snapcraft.io/static/js/publisher/release/" (23827 40611 603490 344000) "constants.js" "releasesController.js" "components/" "actions/" "../" "helpers.test.js" "selectors/" "reducers/" "helpers.js" "releasesState.js" "./")
+
+ ("/home/luke/Projects/Canonical/snapcraft.io/static/js/publisher/release/reducers/" (23827 34113 488878 394000) "modal.js" "pendingReleases.js" "history.js" "releases.js" "availableRevisionsSelect.test.js" "../" "notification.js~" "revisions.test.js" "releases.test.js" "pendingReleases.test.js" "history.test.js" "defaultTrack.js~" "notification.js" "currentTrack.test.js" "revisions.js" "availableRevisionsSelect.js" "index.js" "pendingCloses.js" "pendingCloses.test.js" "currentTrack.js" "./" "channelMap.js" "modal.js~" "channelMap.test.js")
+
+ ("/home/luke/Projects/Canonical/snapcraft.io/webapp/publisher/snaps/" (23827 38436 823926 45000) "../" "__pycache__/" "logic.py" "views.py" "./" "preview_data.py")
+
+ ("/home/luke/Projects/Canonical/snapcraft.io/webapp/api/" (23827 36515 87242 686000) "store.py" "../" "__pycache__/" "dashboard.py" "marketo.py" "exceptions.py" "sso.py" "requests.py" "./" "blog.py" "__init__.py")
+
+ ("/home/luke/Projects/Canonical/snapcraft.io/static/js/publisher/release/components/" (23827 40263 536242 562000) "modal.js" "historyPanel.js" "../" "releasesTableCell.js" "contextualMenu.js" "defaultTrackModifier.js~" "promoteMenu.js" "releasesConfirm.js" "releasesTableRow.js" "revisionsListRow.js" "notification.js" "releasesTable.js" "defaultTrackModifier.js" "channelMenu.js" "releasesHeading.js" "./" "availableRevisionsMenu.js" "revisionsList.js" "devmodeIcon.js" "modal.js~")
+
+ ("/home/luke/.emacs.d/" (23827 40110 902729 43000) "ido.last~" "../" "Readme.org" "init.el" "Readme.org~" "elpa/" "auto-save-list/" "ido.last" ".cache/" "init.el~" "./")
+
+ ("/home/luke/Projects/Canonical/snapcraft.io/static/js/publisher/release/selectors/" (23827 40537 42812 505000) "../" "selectors.test.js" "index.js" "./")
+
+ ("/home/luke/Projects/Canonical/snapcraft.io/static/js/publisher/release/actions/" (23827 39521 383811 42000) "modal.js" "pendingReleases.js" "history.js" "releases.js" "availableRevisionsSelect.test.js" "../" "notification.js~" "revisions.test.js" "releases.test.js" "pendingReleases.test.js" "history.test.js" "defaultTrack.js~" "notification.js" "currentTrack.test.js" "revisions.js" "availableRevisionsSelect.js" "pendingCloses.js" "pendingCloses.test.js" "currentTrack.js" "./" "channelMap.js" "modal.js~" "channelMap.test.js")
+
+ ("/home/luke/Projects/Canonical/snapcraft.io/webapp/publisher/" (23819 17389 382373 324000) "../" "__pycache__/" "snaps/" "views.py" "./" "__init__.py")
+
+ ("/home/luke/Projects/Canonical/snapcraft.io/" (23826 5358 257724 360000) ".git/" ".github/" "package.json" ".envrc" "templates/" ".idea/" ".eslintignore" ".circleci/" "entrypoint" "run" "../" ".dockerignore" "cache.sqlite" "requirements.txt" ".docker-project" ".yarn.canonical-webteam-snapcraft.io-b8383516.hash" "static/" "Dockerfile" ".sass-lint.yml" ".gitignore" ".babelrc" "webapp/" ".env.local" ".pip.canonical-webteam-snapcraft.io-b8383516.hash" "tests/" ".eslintrc.js" "coverage/" ".env" "README.md" ".env.local~" "./" "webpack.config.js" "node_modules/" "yarn.lock")
+
+ ("/home/luke/Projects/Canonical/snapcraft.io/static/" (23798 23223 749238 832000) "images/" "sass/" "../" "css/" "./" "js/")
+
+ ("/home/luke/Projects/Canonical/snapcraft.io/static/js/" (23815 21795 117611 893000) "publisher/" "../" "public/" "dist/" "base/" "modules/" "libs/" "world-110m.v1.json" "config/" "./")
+
+ ("/home/luke/Projects/Canonical/snapcraft.io/static/js/publisher/" (23819 17388 430361 506000) "preview.js" "state.test.js" "submitEnabler.test.js" "release/" "submitEnabler.js" "../" "settings.js" "metrics/" "form.test.js" "form.js" "release.js" "market/" "publisher.js" "state.js" "./" "publicise.js" "form/")
 
  ("/home/luke/Projects/Personal/olaris-react/" (23815 17912 710310 128000) ".git/" "package.json" ".idea/" ".eslintignore" "src/" "../" ".editorconfig" ".gitlab-ci.yml" "scripts/" "build/" ".gitignore" ".babelrc" ".env.local" "public/" "LICENSE" ".env" "README.md" ".prettierrc" "config/" "./" "node_modules/" "yarn.lock")
 
  ("/home/luke/Projects/Personal/" (23819 40777 576792 45000) "olaris-react/" "OpenTTD-patches/" "olaris-server/" "upnp/" "../" "olaris-snap/" "iso-art/" "direnv-setup/" "olaris-docker/" "ecotricity-api/" "ffmpeg/" "obd/" "dotfiles/" "github-data/" "./" "go/" "generate-skyline/" "farm/")
 
- ("/home/luke/Projects/Canonical/snapcraft.io/" (23825 63612 716212 855000) ".git/" ".github/" "package.json" ".envrc" "templates/" ".idea/" ".eslintignore" ".circleci/" "entrypoint" "run" "../" ".dockerignore" "cache.sqlite" "requirements.txt" ".docker-project" ".yarn.canonical-webteam-snapcraft.io-b8383516.hash" "static/" "Dockerfile" ".sass-lint.yml" ".gitignore" ".babelrc" "webapp/" ".env.local" ".pip.canonical-webteam-snapcraft.io-b8383516.hash" "tests/" ".eslintrc.js" "coverage/" ".env" "README.md" ".env.local~" "./" "webpack.config.js" "node_modules/" "yarn.lock")
-
- ("/home/luke/Projects/Canonical/snapcraft.io/static/js/publisher/release/" (23825 64463 539989 287000) "constants.js" "releasesController.js" "components/" "actions/" "../" "#releasesController.js#" "helpers.test.js" "selectors/" "reducers/" "helpers.js" "releasesState.js" "./")
-
  ("/home/" (23706 19021 924194 792000) "../" "luke/" "./")
-
- ("/home/luke/" (23825 63635 172860 497000) ".zsh_history" ".pylint.d/" ".vim/" ".ICEauthority" "blocks.blend" ".snap/" ".node-gyp/" ".zcompdump" ".screenlayout/" ".fzf.zsh" ".fonts/" ".local/" ".zcompdump-graeme-nolegs-5.4.2" ".config/" ".vimrc" ".yarn/" ".pki/" ".gitconfig" "../" ".sudo_as_admin_successful" "Projects/" "Public/" ".viminfo" "Documents/" "obs-log.txt" ".doom.d/" "Pictures/" "stale_outputs_checked" ".vscode/" ".IntelliJIdea2019.1/" ".steampath" ".bashrc" "Music/" ".ssh/" ".gphoto/" ".keychain/" ".dbus/" ".pulse-cookie" ".lesshst" ".steam/" ".profile" ".openttd/" ".bash_history" "Templates/" ".ssb/" "snap/" ".gnupg/" ".emacs.d/" "bin/" ".gitignore" ".npm/" ".mozilla/" ".spacemacs" ".fzf.bash" ".venvs/" ".oh-my-zsh/" ".cache/" ".java/" "Screenshot from 2019-06-24 08-57-21.png" ".fehbg" "./" ".zshrc.pre-oh-my-zsh" "Desktop/" "Downloads/" ".fzf/" ".zshrc")
 
  ("/home/luke/Projects/Canonical/snapcraft.io/templates/publisher/" (23825 63973 878856 892000) "register-name-dispute.html" "release-history.html" "../" "developer_programme_agreement.html" "account-details.html" "listing.html" "register-name-dispute-success.html" "register-snap.html" "_header.html" "account-snaps.html" "settings.html" "publicise/" "request-reserved-name.html" "metrics.html" "username.html" "./" "_publisher_layout.html")
 

@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (prettier-js pretter-js company buffer-move yaml-mode rjsx-mode org-bullets which-key try use-package))))
+    (flycheck prettier-js pretter-js company buffer-move yaml-mode rjsx-mode org-bullets which-key try use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -23,6 +23,18 @@
   (setq indent-tabs-mode nil)
 
   (indentation 2))
+
+;; use local eslint from node_modules before global
+;; http://emacs.stackexchange.com/questions/21205/flycheck-with-file-relative-eslint-executable
+(defun my/use-eslint-from-node-modules ()
+  (let* ((root (locate-dominating-file
+                (or (buffer-file-name) default-directory)
+                "node_modules"))
+         (eslint (and root
+                      (expand-file-name "node_modules/eslint/bin/eslint.js"
+                                        root))))
+    (when (and eslint (file-executable-p eslint))
+      (setq-local flycheck-javascript-eslint-executable eslint))))
 
 (setq inhibit-startup-message t)
 
@@ -63,6 +75,13 @@
   :ensure t
   :mode "\\.js\\'")
 
+(use-package flycheck
+  :ensure t
+  :init
+  (progn
+    (global-flycheck-mode)
+    (add-hook 'flycheck-mode-hook 'my/use-eslint-from-node-modules)))
+
 (use-package prettier-js
   :ensure t)
 (add-hook 'rjsx-mode-hook 'prettier-js-mode)
@@ -92,3 +111,7 @@
 
 ;; Prevent ctrl + z fucking things up
 (global-unset-key (kbd "C-z"))
+
+;; ctrl + d delete line
+(global-set-key "\C-d" 'kill-whole-line)
+
