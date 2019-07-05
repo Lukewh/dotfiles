@@ -1,1 +1,1 @@
-("~/Projects/Canonical/snapcraft.io/")
+("~/Projects/Personal/olaris-react/" "~/Projects/Canonical/snapcraft.io/")
