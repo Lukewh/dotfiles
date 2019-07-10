@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck prettier-js pretter-js company buffer-move yaml-mode rjsx-mode org-bullets which-key try use-package))))
+    (blacken flycheck prettier-js pretter-js company buffer-move yaml-mode rjsx-mode org-bullets which-key try use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -85,6 +85,11 @@
 (use-package prettier-js
   :ensure t)
 (add-hook 'rjsx-mode-hook 'prettier-js-mode)
+
+(use-package blacken
+  :ensure t)
+(setq blacken-line-length 79)
+(add-hook 'python-mode-hook 'blacken-mode)
 
 (use-package yaml-mode
   :ensure t
