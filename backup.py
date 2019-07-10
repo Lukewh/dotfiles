@@ -15,12 +15,11 @@ files = [
     "bin/=",
     "bin/battery.sh",
     "bin/emoj",
-    "bin/youtube.sh"
+    "bin/youtube.sh",
+    ".emacs.d/init.el"
 ]
 
 folders = [
-    ".vim",
-    ".emacs.d",
     ".config/i3",
     ".config/i3blocks",
     ".config/i3status",

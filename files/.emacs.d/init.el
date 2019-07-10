@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (blacken flycheck prettier-js pretter-js company buffer-move yaml-mode rjsx-mode org-bullets which-key try use-package))))
+    (blacken treemacs-projectile editorconfig projectile-mode flycheck prettier-js pretter-js company buffer-move yaml-mode rjsx-mode org-bullets which-key try use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -70,6 +70,20 @@
   :init
   (add-hook 'after-init-hook 'global-company-mode))
 
+(use-package projectile
+  :ensure t
+  :config
+  (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
+  (projectile-mode +1))
+
+(use-package treemacs-projectile
+  :ensure t)
+
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
+
 ;; Modes
 (use-package rjsx-mode
   :ensure t
@@ -116,6 +130,8 @@
 
 ;; Prevent ctrl + z fucking things up
 (global-unset-key (kbd "C-z"))
+
+(show-paren-mode 1)
 
 ;; ctrl + d delete line
 (global-set-key "\C-d" 'kill-whole-line)
