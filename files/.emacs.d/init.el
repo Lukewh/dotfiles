@@ -126,6 +126,8 @@
 ;; Prevent ctrl + z fucking things up
 (global-unset-key (kbd "C-z"))
 
+(show-paren-mode 1)
+
 ;; ctrl + d delete line
 (global-set-key "\C-d" 'kill-whole-line)
 
