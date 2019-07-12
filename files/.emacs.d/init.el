@@ -60,7 +60,10 @@
   :ensure t
   :bind
   (:map global-map
-	([f8] . treemacs)))
+	([f8] . treemacs))
+  :config
+  (progn
+   (setq treemacs-is-never-other-window t)))
 
 (use-package buffer-move
   :ensure t)
