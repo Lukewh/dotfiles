@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (blacken treemacs-projectile editorconfig projectile-mode flycheck prettier-js pretter-js company buffer-move yaml-mode rjsx-mode org-bullets which-key try use-package))))
+    (scss-mode blacken treemacs-projectile editorconfig projectile-mode flycheck prettier-js pretter-js company buffer-move yaml-mode rjsx-mode org-bullets which-key try use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -327,9 +327,8 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPlay exec playerctl play-pause
 bindsym $mod+Home exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
 bindsym $mod+Shift+Home exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym $mod+End exec playerctl next
@@ -347,7 +346,7 @@ exec --no-startup-id redshift-gtk &
 
 exec compton -f -D 2 --inactive-dim -1.09
 
-exec "~/.config/i3/input-devices.sh"
+exec "~/.config/i3/host-$(hostname).sh"
 
 exec emacs --daemon
 
