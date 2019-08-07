@@ -338,8 +338,6 @@ bindsym $mod+Shift+End exec playerctl previous
 #exec xrandr --ouput "VGA-1" --mode "1920x1080"
 exec_always --no-startup-id nm-applet
 
-exec --no-startup-id "feh --bg-scale /home/luke/.config/lock-image.png"
-
 exec --no-startup-id redshift-gtk &
 
 #exec --no-startup-id xautolock -time 5 -locker python3 ~/.config/lock.py &
@@ -352,3 +350,5 @@ exec emacs --daemon
 
 exec --no-startup-id wavebox
 for_window [class="wavebox"] move scratchpad
+
+exec --no-startup-id "feh --bg-scale /home/luke/.config/lock-image.png"

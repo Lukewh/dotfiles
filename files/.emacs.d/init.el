@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (scss-mode blacken treemacs-projectile editorconfig projectile-mode flycheck prettier-js pretter-js company buffer-move yaml-mode rjsx-mode org-bullets which-key try use-package))))
+    (blacken treemacs-projectile editorconfig projectile-mode flycheck prettier-js pretter-js company buffer-move yaml-mode rjsx-mode org-bullets which-key try use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -14,7 +14,8 @@
  )
 
 (defun indentation (n)
-  (setq-local js-indent-level n))
+  (setq-local js-indent-level n)
+  (setq-local css-indent-offset n))
 
 (defun set-environment ()
   (interactive)
@@ -37,6 +38,7 @@
       (setq-local flycheck-javascript-eslint-executable eslint))))
 
 (setq inhibit-startup-message t)
+(tool-bar-mode -1)
 
 (require 'package)
 (setq package-enable-at-startup nil)
