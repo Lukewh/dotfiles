@@ -10,8 +10,6 @@ files = [
     ".gitignore",
     ".gitconfig",
     ".config/lock.py",
-    ".config/lock-image.jpg",
-    ".config/lock-image.png",
     "bin/=",
     "bin/battery.sh",
     "bin/emoj",
