@@ -213,13 +213,13 @@ set $moveToWorkspace1 "/home/luke/.config/i3/switch-to-workspace.sh"
 # url github mode
 set $urlGithubMode "Repo: [b]uild.s.io [s]napcraft [v]anilla"
 mode $urlGithubMode {
-        bindsym b exec "firefox github.com/canonical-websites/build.snapcraft.io";\
+        bindsym b exec "firefox github.com/canonical-web-and-design/build.snapcraft.io";\
                 exec $moveToWorkspace1;\
                 mode "default"
-        bindsym s exec "firefox github.com/canonical-websites/snapcraft.io";\
+        bindsym s exec "firefox github.com/canonical-web-and-design/snapcraft.io";\
                 exec $moveToWorkspace1;\
                 mode "default"
-        bindsym v exec "firefox github.com/vanilla-framework/vanilla-framework";\
+        bindsym v exec "firefox github.com/canonical-web-and-design/vanilla-framework";\
                 exec $moveToWorkspace1;\
                 mode "default"
 

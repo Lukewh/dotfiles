@@ -40,6 +40,8 @@
 (setq inhibit-startup-message t)
 (tool-bar-mode -1)
 
+(add-to-list 'default-frame-alist '(font . "Essential PragmataPro-13"))
+
 (require 'package)
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives
