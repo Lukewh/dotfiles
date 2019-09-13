@@ -40,6 +40,9 @@
 (setq inhibit-startup-message t)
 (tool-bar-mode -1)
 
+;; Backup files in ~/.saves
+(setq backup-directory-alist '(("." . "~/.saves")))
+
 (add-to-list 'default-frame-alist '(font . "Essential PragmataPro-13"))
 
 (require 'package)

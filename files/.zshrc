@@ -101,11 +101,12 @@ TZ='Europe/London'; export TZ
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-PATH=$PATH:/snap/bin/:/home/luke/bin/
+PATH=$PATH:/snap/bin/:/home/luke/bin/:/home/Projects/Canonical/flutter/flutter/bin
 
 alias yt="~/bin/youtube.sh"
 alias teamspeak="~/bin/TeamSpeak3-Client-linux_amd64/ts3client_runscript.sh"
 alias e="emacsclient -c -n"
+alias android-studio="~/Projects/Android/android-studio/bin/studio.sh"
 
 . /usr/share/autojump/autojump.sh
 
