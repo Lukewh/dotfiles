@@ -8,7 +8,7 @@
     ("0598c6a29e13e7112cfbc2f523e31927ab7dce56ebb2016b567e1eff6dc1fd4f" default)))
  '(package-selected-packages
    (quote
-    (helm-projectile helm solarized-theme company-quickhelp blacken treemacs-projectile editorconfig projectile-mode flycheck prettier-js pretter-js company buffer-move yaml-mode rjsx-mode org-bullets which-key try use-package))))
+    (company-tern elpy helm-projectile helm solarized-theme company-quickhelp blacken treemacs-projectile editorconfig projectile-mode flycheck prettier-js pretter-js company buffer-move yaml-mode rjsx-mode org-bullets which-key try use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -71,6 +71,11 @@
   :ensure t
   :config (helm-mode 1))
 
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable))
+
 (use-package treemacs
   :ensure t
   :bind
@@ -92,6 +97,12 @@
   :ensure t
   :config
   (company-quickhelp-mode))
+
+(use-package company-tern
+  :ensure t
+  :init
+  (add-to-list 'company-backends 'company-tern)
+   (add-hook 'prettier-js-mode-hook (lambda () (tern-mode t))))
 
 (use-package projectile
   :ensure t
