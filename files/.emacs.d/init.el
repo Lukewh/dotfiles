@@ -3,9 +3,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("0598c6a29e13e7112cfbc2f523e31927ab7dce56ebb2016b567e1eff6dc1fd4f" default)))
  '(package-selected-packages
    (quote
-    (blacken treemacs-projectile editorconfig projectile-mode flycheck prettier-js pretter-js company buffer-move yaml-mode rjsx-mode org-bullets which-key try use-package))))
+    (helm-projectile helm solarized-theme company-quickhelp blacken treemacs-projectile editorconfig projectile-mode flycheck prettier-js pretter-js company buffer-move yaml-mode rjsx-mode org-bullets which-key try use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -39,6 +42,7 @@
 
 (setq inhibit-startup-message t)
 (tool-bar-mode -1)
+(menu-bar-mode -1)
 
 ;; Backup files in ~/.saves
 (setq backup-directory-alist '(("." . "~/.saves")))
@@ -63,6 +67,10 @@
   :ensure t
   :config (which-key-mode))
 
+(use-package helm
+  :ensure t
+  :config (helm-mode 1))
+
 (use-package treemacs
   :ensure t
   :bind
@@ -80,11 +88,20 @@
   :init
   (add-hook 'after-init-hook 'global-company-mode))
 
+(use-package company-quickhelp
+  :ensure t
+  :config
+  (company-quickhelp-mode))
+
 (use-package projectile
   :ensure t
   :config
   (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
   (projectile-mode +1))
+
+(use-package helm-projectile
+  :ensure t
+  :config (helm-projectile-on))
 
 (use-package treemacs-projectile
   :ensure t)
@@ -120,9 +137,13 @@
   :mode "\\.ya?ml\\'")
 
 ;; Themes
-(use-package doom-themes
+;(use-package doom-themes
+;  :ensure t
+                                        ;  :config (load-theme 'doom-one t))
+(use-package solarized-theme
   :ensure t
-  :config (load-theme 'doom-one t))
+  :init (
+         load-theme 'solarized-dark))
 
 ;; Org-mode stuff
 (use-package org-bullets
@@ -130,9 +151,9 @@
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
-(setq indo-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode 1)
+;;(setq indo-enable-flex-matching t)
+;;(setq ido-everywhere t)
+;;(ido-mode 1)
 
 ;; Programming hooks
 (add-hook 'prog-mode-hook 'set-environment)
