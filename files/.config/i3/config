@@ -142,6 +142,10 @@ assign [class="jetbrains-idea"] $workspace4
 assign [class="spotify"] $workspace8
 assign [class="Google-Chrome"] $workspace10
 
+# notifications
+bindsym $mod+n exec "notify-send 'DUNST_COMMAND_RESUME' && notify-send 'Notifications are back!' -t 1000"
+bindsym $mod+Shift+n exec "notify-send 'Turning notifications off!' -t 1000 && sleep 1 && notify-send 'DUNST_COMMAND_PAUSE'"
+
 # launch apps
 bindsym $mod+c exec "/home/luke/bin/="
 bindsym $mod+t exec "/home/luke/bin/emoj"
