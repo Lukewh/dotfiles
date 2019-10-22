@@ -8,7 +8,7 @@
     ("0598c6a29e13e7112cfbc2f523e31927ab7dce56ebb2016b567e1eff6dc1fd4f" default)))
  '(package-selected-packages
    (quote
-    (company-tern elpy helm-projectile helm solarized-theme company-quickhelp blacken treemacs-projectile editorconfig projectile-mode flycheck prettier-js pretter-js company buffer-move yaml-mode rjsx-mode org-bullets which-key try use-package))))
+    (doom-themes move-text mode-text dashboard centaur-tabs awesome-tab eslint-fix company-tern elpy helm-projectile helm solarized-theme company-quickhelp blacken treemacs-projectile editorconfig projectile-mode flycheck prettier-js pretter-js company buffer-move yaml-mode rjsx-mode org-bullets which-key try use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -67,6 +67,9 @@
   :ensure t
   :config (which-key-mode))
 
+(use-package all-the-icons
+  :ensure t)
+
 (use-package helm
   :ensure t
   :config (helm-mode 1))
@@ -122,6 +125,29 @@
   :config
   (editorconfig-mode 1))
 
+(use-package centaur-tabs
+  :demand
+  :config
+  (setq centaur-tabs-set-bar 'over
+          centaur-tabs-set-icons t
+          centaur-tabs-gray-out-icons 'buffer
+          centaur-tabs-height 24
+          centaur-tabs-set-modified-marker t
+          centaur-tabs-modified-marker "•")
+  (centaur-tabs-headline-match)
+  (centaur-tabs-mode t))
+
+(use-package dashboard
+  :ensure t
+  :config
+  (setq dashboard-items '((recents . 5)
+                          (projects . 5)))
+  (dashboard-setup-startup-hook))
+
+(use-package move-text
+  :ensure t
+  :config (move-text-default-bindings))
+
 ;; Modes
 (use-package rjsx-mode
   :ensure t
@@ -135,26 +161,27 @@
     (add-hook 'flycheck-mode-hook 'my/use-eslint-from-node-modules)))
 
 (use-package prettier-js
-  :ensure t)
-(add-hook 'rjsx-mode-hook 'prettier-js-mode)
+  :ensure t
+  :init
+  (add-hook 'rjsx-mode-hook 'prettier-js-mode))
+
 
 (use-package blacken
-  :ensure t)
-(setq blacken-line-length 79)
-(add-hook 'python-mode-hook 'blacken-mode)
+  :ensure t
+  :init
+  (progn
+    (setq blacken-line-length 79)
+    (add-hook 'python-mode-hook 'blacken-mode)))
 
 (use-package yaml-mode
   :ensure t
   :mode "\\.ya?ml\\'")
 
 ;; Themes
-;(use-package doom-themes
-;  :ensure t
-                                        ;  :config (load-theme 'doom-one t))
-(use-package solarized-theme
-  :ensure t
-  :init (
-         load-theme 'solarized-dark))
+(use-package doom-themes
+ :ensure t
+ :config
+ (load-theme 'doom-solarized-dark t))
 
 ;; Org-mode stuff
 (use-package org-bullets

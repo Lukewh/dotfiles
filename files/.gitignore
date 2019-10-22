@@ -2,3 +2,4 @@
 .coverage
 .coveragerc
 exports
+.tern-port

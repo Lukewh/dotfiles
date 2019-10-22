@@ -1,1 +1,3 @@
 rofi.theme: /home/luke/.config/rofi/themes/lukewh.rasi
+rofi.show-icons: true
+rofi.drun-icon-theme: Arc
