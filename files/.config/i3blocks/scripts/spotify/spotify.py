@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import dbus
 import os
@@ -23,13 +23,13 @@ def run(is_main):
         props = spotify_iface.Get('org.mpris.MediaPlayer2.Player', 'Metadata')
 
         if (sys.version_info > (3, 0)):
-            return_str = str(props['xesam:artist'][0]) + " - " + str(props['xesam:title'])
+            return_str = "  " + str(props['xesam:artist'][0]) + " - " + str(props['xesam:title'])
             if is_main:
                 print(return_str)
             else:
                 return return_str
         else:
-            return_str = props['xesam:artist'][0] + " - " + props['xesam:title']
+            return_str = "  " + props['xesam:artist'][0] + " - " + props['xesam:title']
             if is_main:
                 print(return_str).encode('utf-8')
             else:

@@ -1,7 +1,5 @@
-# i3blocks config file
-#
-# Please see man i3blocks for a complete reference!
-# The man page is also hosted at http://vivien.github.io/i3blocks
+# i3xrocks config file
+# # The man page for i3blocks is hosted at http://vivien.github.io/i3blocks
 #
 # List of valid properties:
 #
@@ -24,14 +22,14 @@
 #
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
-command=/usr/share/i3blocks/$BLOCK_NAME
+command=/usr/share/i3xrocks/$BLOCK_NAME
 separator_block_width=15
-separator=true
-markup=none
+markup=pango
+color=xresource:i3xrocks.value.color
+label_color=xresource:i3xrocks.label.color
 
 # Spotify
 [spotify]
-label=
 command=/home/luke/.config/i3blocks/scripts/spotify/spotify.py
 interval=5
 
@@ -59,7 +57,7 @@ signal=1
 # The type defaults to "mem" if the instance is not specified.
 [memory]
 command=/home/luke/.config/i3blocks/scripts/memory/memory
-label=
+label= 
 separator=false
 interval=30
 
@@ -76,7 +74,7 @@ interval=30
 # (defaults to 10 for 10%).
 [disk]
 command=/home/luke/.config/i3blocks/scripts/drive/drive
-label=
+label= 
 #instance=/mnt/data
 interval=30
 
@@ -103,7 +101,6 @@ interval=10
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [cpu_usage]
-label=
 interval=10
 
 #[load_average]
@@ -112,14 +109,14 @@ interval=10
 # Battery indicator
 #
 # The battery instance defaults to 0.
-[battery]
+#[battery]
 #label=BAT
 #label=⚡
 #instance=1
 #interval=30
-command=~/bin/battery.sh
-interval=30
-markup=pango
+#command=~/bin/battery.sh
+#interval=30
+#markup=pango
 
 # Date Time
 #

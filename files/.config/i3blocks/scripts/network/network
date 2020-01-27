@@ -2,4 +2,4 @@
 
 INFO=$(wicd-cli -i)
 
-echo $INFO | sed s/:/\\n/g | sed '3!d' | sed '/^$/d' 
+echo $INFO | sed s/:/\\n/g | sed '3!d' | sed '/^$/d'

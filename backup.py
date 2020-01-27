@@ -14,7 +14,8 @@ files = [
     "bin/battery.sh",
     "bin/emoj",
     "bin/youtube.sh",
-    ".emacs.d/init.el"
+    ".emacs.d/init.el",
+    ".emacs.d/my-init.org"
 ]
 
 folders = [
@@ -30,22 +31,24 @@ for file in files:
         file
     ])
 
-    dest_path = "/".join([
+    if isfile(src_path):
+        dest_path = "/".join([
         dirname(abspath(__file__)),
-        "files",
-        file
-    ])
-    
+            "files",
+            file
+        ])
+        
 
-    dest_parts = dest_path.split("/")[1:-1]
+        dest_parts = dest_path.split("/")[1:-1]
     
-    current_path = ""
-    for part in dest_parts:
-        current_path = "/".join([current_path, part])
-        if not isdir(current_path) and not isfile(current_path):
-            mkdir(current_path)
+        current_path = ""
+        for part in dest_parts:
+            current_path = "/".join([current_path, part])
+            if not isdir(current_path) and not isfile(current_path):
+                mkdir(current_path)
 
-    copy(src_path, dest_path)
+
+        copy(src_path, dest_path)
 
 for folder in folders:
     src_path = "/".join([
@@ -53,11 +56,12 @@ for folder in folders:
         folder
     ])
 
-    dest_path = "/".join([
-        dirname(abspath(__file__)),
-        "files",
-        folder
-    ])
+    if isdir(src_path):
+        dest_path = "/".join([
+            dirname(abspath(__file__)),
+            "files",
+            folder
+        ])
 
-    copy_tree(src_path, dest_path)
+        copy_tree(src_path, dest_path)
 

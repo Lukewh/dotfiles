@@ -1,0 +1,295 @@
+#+TITLE: My config
+* Custom functions
+** Indentation
+  #+BEGIN_SRC emacs-lisp
+  (defun indentation (n)
+    (setq-local js-indent-level n)
+    (setq-local css-indent-offset n))
+  #+END_SRC
+
+** Set environment
+   #+BEGIN_SRC emacs-lisp
+   (defun set-environment ()
+     (interactive)
+     (message "2 space indentation")
+
+     (setq indent-tabs-mode nil)
+
+     (indentation 2))
+   #+END_SRC
+
+** Init
+   #+BEGIN_SRC emacs-lisp
+   (add-hook 'prog-mode-hook 'set-environment)
+   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+   #+END_SRC
+
+* Overrides
+  .save files in the home dir
+  #+BEGIN_SRC emacs-lisp
+  (setq backup-directory-alist '(("." . "~/.saves")))
+  #+END_SRC
+
+  Prevent ctrl + z fucking things up
+  #+BEGIN_SRC emacs-lisp
+  (global-unset-key (kbd "C-z"))
+  #+END_SRC
+  
+  Show matching parenthesis
+  #+BEGIN_SRC emacs-lisp
+  (show-paren-mode 1)
+  #+END_SRC
+
+  ctrl + d delete line
+  #+BEGIN_SRC emacs-lisp
+  (global-set-key "\C-d" 'kill-whole-line)
+  #+END_SRC
+
+* Interface
+   #+BEGIN_SRC emacs-lisp
+   (setq inhibit-startup-message t)
+   (tool-bar-mode -1)
+   (menu-bar-mode -1)
+   (global-hl-line-mode +1)
+   (delete-selection-mode 1)
+   #+END_SRC
+
+** Theme
+   #+BEGIN_SRC emacs-lisp
+   (use-package doom-themes
+     :ensure t
+     :config
+     (load-theme 'doom-nord t))
+   #+END_SRC
+
+   Modeline
+   #+BEGIN_SRC emacs-lisp
+   (use-package doom-modeline
+     :ensure t
+     :hook (after-init . doom-modeline-mode))
+   #+END_SRC
+
+** Font
+   #+BEGIN_SRC emacs-lisp
+   (add-to-list 'default-frame-alist '(font . "Essential PragmataPro-10"))
+   #+END_SRC
+
+* Packages
+** Try
+   Let's you try a package without installing it
+   #+BEGIN_SRC emacs-lisp
+   (use-package try
+     :ensure t)
+   #+END_SRC
+** Which Key
+   Shows what keys are available after a couple of seconds
+   #+BEGIN_SRC emacs-lisp
+   (use-package which-key
+     :ensure t
+     :config (which-key-mode))
+   #+END_SRC
+** All The Icons
+   Install icons font - manual step M-x all-the-icons-install-fonts
+   #+BEGIN_SRC emacs-lisp
+   (use-package all-the-icons
+     :ensure t)
+   #+END_SRC
+** Helm
+   Search and what-not
+   #+BEGIN_SRC emacs-lisp
+   (use-package helm
+     :ensure t
+     :config (helm-mode 1))
+   #+END_SRC
+** Elpy
+   For Python
+   #+BEGIN_SRC emacs-lisp
+   (use-package elpy
+     :ensure t
+     :init
+     (elpy-enable))
+   #+END_SRC
+** Treemacs
+   File tree
+   #+BEGIN_SRC emacs-lisp
+   (use-package treemacs
+     :ensure t
+     :bind
+     (:map global-map
+	([f8] . treemacs))
+     :config
+       (progn
+         (setq treemacs-is-never-other-window t)))
+    #+END_SRC
+** company
+   Auto completion
+   #+BEGIN_SRC emacs-lisp   
+   (use-package company
+     :ensure t
+     :init
+       (add-hook 'after-init-hook 'global-company-mode))
+   #+END_SRC
+** company-quickhelp
+   Documentation popup for company
+   #+BEGIN_SRC emacs-lisp
+   (use-package company-quickhelp
+     :ensure t
+     :config
+       (company-quickhelp-mode))
+   #+END_SRC
+** Company Tern
+   Tern backend for Company
+   #+BEGIN_SRC emacs-lisp   
+   (use-package company-tern
+     :ensure t
+     :init
+       (add-to-list 'company-backends 'company-tern))
+   #+END_SRC
+** Projectile
+   Manage projects
+   #+BEGIN_SRC emacs-lisp
+   (use-package projectile
+     :ensure t
+     :config
+       (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
+       (projectile-mode +1))
+   #+END_SRC
+** Helm Projectile
+   Use helm with projectile
+   #+BEGIN_SRC emacs-lisp
+   (use-package helm-projectile
+     :ensure t
+     :config (helm-projectile-on))
+   #+END_SRC
+** Treemacs Projectile
+   Use Treemacs with Projectile
+   #+BEGIN_SRC emacs-lisp
+   (use-package treemacs-projectile
+     :ensure t)
+   #+END_SRC
+** Editor Config
+   Use .editorconfig files
+   #+BEGIN_SRC emacs-lisp
+   (use-package editorconfig
+     :ensure t
+     :config
+       (editorconfig-mode 1))
+   #+END_SRC
+** Centaur tabs
+   Tabs like in other editors
+   #+BEGIN_SRC emacs-lisp
+   (use-package centaur-tabs
+     :demand
+     :config
+       (setq centaur-tabs-set-bar 'over
+         centaur-tabs-set-icons t
+	 centaur-tabs-gray-out-icons 'buffer
+	 centaur-tabs-height 24
+	 centaur-tabs-set-modified-marker t
+	 centaur-tabs-modified-marker "•")
+       (centaur-tabs-headline-match)
+       (centaur-tabs-mode t))
+   #+END_SRC
+** Dashboard
+   A dashboard when you start Emacs
+   #+BEGIN_SRC emacs-lisp
+   (use-package dashboard
+     :ensure t
+     :config
+       (setq dashboard-items '((recents . 5)
+                          (projects . 5)))
+   (dashboard-setup-startup-hook))
+   #+END_SRC
+** Move text
+   Move lines up and down
+   #+BEGIN_SRC emacs-lisp
+   (use-package move-text
+     :ensure t
+     :config (move-text-default-bindings))
+   #+END_SRC
+** Magit
+   Git
+   #+BEGIN_SRC emacs-lisp
+   (use-package magit
+     :ensure t)
+   #+END_SRC
+
+* Modes
+** rjsx
+   For react
+   #+BEGIN_SRC emacs-lisp
+   (use-package rjsx-mode
+     :ensure t
+     :mode "\\.js\\'")
+   #+END_SRC
+** Flycheck
+   For syntax checking
+   #+BEGIN_SRC emacs-lisp
+   (use-package flycheck
+     :ensure t
+     :init
+       (global-flycheck-mode))
+   #+END_SRC
+** Blacken
+   Black for Python
+   #+BEGIN_SRC emacs-lisp
+   (use-package blacken
+     :ensure t
+     :init
+       (progn
+         (setq blacken-line-length 79)
+         (add-hook 'python-mode-hook 'blacken-mode)))
+   #+END_SRC
+** YAML
+   For yaml
+   #+BEGIN_SRC emacs-lisp
+   (use-package yaml-mode
+     :ensure t
+     :mode "\\.ya?ml\\'")
+   #+END_SRC
+** JSON
+   For JSON
+   #+BEGIN_SRC emacs-lisp
+   (use-package json-mode
+     :ensure t
+     :mode "\\.json\\'")
+   #+END_SRC
+** eslint
+   For JS
+   #+BEGIN_SRC emacs-lisp
+   (use-package eslintd-fix
+     :ensure t
+     :init
+       (add-hook 'rjsx-mode-hook 'eslintd-fix-mode))
+   #+END_SRC
+* Org mode stuff
+** org bullets
+   For better bullets in org mode
+   #+BEGIN_SRC emacs-lisp
+   (use-package org-bullets
+     :ensure t
+     :config
+       (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+   #+END_SRC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

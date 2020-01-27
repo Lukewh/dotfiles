@@ -79,7 +79,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-export VISUAL=vim
+export VISUAL=kak
 export EDITOR="$VISUAL"
 export UPLOAD_ASSETS_API_DOMAIN=assets.ubuntu.com
 export UPLOAD_ASSETS_API_TOKEN=6d8a5d93-ef24-46db-b26a-a97dbb30b3af
@@ -107,10 +107,11 @@ alias yt="~/bin/youtube.sh"
 alias teamspeak="~/bin/TeamSpeak3-Client-linux_amd64/ts3client_runscript.sh"
 alias e="emacsclient -c -n"
 alias android-studio="~/Projects/Android/android-studio/bin/studio.sh"
+alias python="python3"
 
 . /usr/share/autojump/autojump.sh
 
-eval `keychain --agents ssh --eval id_rsa`
+#eval `keychain --agents ssh --eval id_rsa`
 
 # direnv
 eval "$(direnv hook zsh)"
