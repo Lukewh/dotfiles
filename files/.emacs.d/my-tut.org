@@ -81,8 +81,22 @@ Super duper config
      :ensure t)
    #+END_SRC
 
-* Modes
+** Org mode
 
+*** Org bullets
+    #+BEGIN_SRC emacs-lisp
+    (use-package org-bullets
+      :ensure t
+      :config
+        (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+    #+END_SRC
+
+*** Org settings
+    #+BEGIN_SRC emacs-lisp
+    (setq org-support-shift-select t)
+    #+END_SRC
+
+* Modes
 ** IDO
    #+BEGIN_SRC emacs-lisp
    (setq ido-everywhere t)
@@ -164,8 +178,35 @@ Super duper config
        ("C--" . er/contract-region))
    #+END_SRC
 
-#+BEGIN_SRC emacs-lisp
-(load-file "~/.emacs.d/named-term.el")
+** Centaur tabs
+   #+BEGIN_SRC emacs-lisp
+   (use-package centaur-tabs
+     :ensure t
+     :config
+       (setq centaur-tabs-set-bar 'over
+             centaur-tabs-set-icons t
+	     centaur-tabs-gray-out-icons 'buffer
+	     centaur-tabs-height 24
+	     centaur-tabs-set-modified-marker t
+	     centaur-tabs-modifier-marker "•")
+	(centaur-tabs-mode t))
+   #+END_SRC
 
-(global-set-key (kbd "C-x t") 'named-term)
-#+END_SRC
+* Custom functions
+
+** named-term
+   #+BEGIN_SRC emacs-lisp
+   (load-file "~/.emacs.d/named-term.el")
+
+   (global-set-key (kbd "C-x t") 'named-term)
+   #+END_SRC
+
+** JS indentation
+   #+BEGIN_SRC emacs-lisp
+   (add-hook 'rjsx-mode-hook (lambda()
+     (setq indent-tabs-mode nil)
+     (setq-local js-indent-level 2)
+   ))
+   #+END_SRC
+
+

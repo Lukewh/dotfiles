@@ -8,7 +8,7 @@
  (rear-context-string)
  (position . 1))
 ("ideas.org"
- (filename . "~/Projects/Personal/Videos/ideas.org")
+ (filename . "~/org/ideas.org")
  (front-context-string . "#+STARTUP: overv")
  (rear-context-string)
  (position . 1))
