@@ -27,13 +27,8 @@
 ** Term
    With thanks to [[https://unix.stackexchange.com/questions/182211/automaticaly-rename-new-buffer-in-term-mode][djangoliv on stackexchange]]
    #+BEGIN_SRC emacs-lisp
-   (defun my-term (name)
-     (interactive "sName: ")
-     (command-execute 'term)
-     (if (string= 'name "")
-       (rename-buffer concat("Term:" name))
-   )
-   (global-set-key (kbd "C-x t") 'my-term)
+   (load-file "~/.emacs.d/named-term.el")
+   (global-set-key (kbd "C-x t") 'named-term)
    #+END_SRC
 
 * Overrides
