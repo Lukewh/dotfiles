@@ -15,7 +15,14 @@ files = [
     "bin/emoj",
     "bin/youtube.sh",
     ".emacs.d/init.el",
-    ".emacs.d/my-init.org"
+    ".emacs.d/my-init.org",
+    ".emacs.d/my-tut.org",
+    ".emacs.d/bookmarks",
+    ".emacs.d/named-term.el",
+    ".emacs.d/personal.el",
+    ".emacs.d/startup.el",
+    ".emacs.d/tut-bookmarks",
+    ".emacs.d/tut.el"
 ]
 
 folders = [

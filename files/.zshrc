@@ -9,6 +9,10 @@
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="agnoster"
 
+if [ -n "$INSIDE_EMACS" ]; then
+    export ZSH_THEME="agnoster"
+fi
+
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
@@ -108,6 +112,7 @@ alias teamspeak="~/bin/TeamSpeak3-Client-linux_amd64/ts3client_runscript.sh"
 alias e="emacsclient -c -n"
 alias android-studio="~/Projects/Android/android-studio/bin/studio.sh"
 alias python="python3"
+alias lbry="~/bin/lbry"
 
 . /usr/share/autojump/autojump.sh
 
@@ -117,3 +122,6 @@ alias python="python3"
 eval "$(direnv hook zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# added by travis gem
+[ -f /home/luke/.travis/travis.sh ] && source /home/luke/.travis/travis.sh

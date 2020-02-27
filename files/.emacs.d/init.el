@@ -1,3 +1,7 @@
+(load-file "~/.emacs.d/startup.el")
+
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -5,30 +9,13 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("0598c6a29e13e7112cfbc2f523e31927ab7dce56ebb2016b567e1eff6dc1fd4f" default)))
+    ("f30aded97e67a487d30f38a1ac48eddb49fdb06ac01ebeaff39439997cbdd869" "423435c7b0e6c0942f16519fa9e17793da940184a50201a4d932eafe4c94c92d" "2d1fe7c9007a5b76cea4395b0fc664d0c1cfd34bb4f1860300347cdad67fb2f9" "728eda145ad16686d4bbb8e50d540563573592013b10c3e2defc493f390f7d83" default)))
  '(package-selected-packages
    (quote
-    (json-mode doom-modeline magit doom-themes move-text mode-text dashboard centaur-tabs awesome-tab company-tern elpy helm-projectile helm solarized-theme company-quickhelp blacken treemacs-projectile editorconfig projectile-mode flycheck company buffer-move yaml-mode rjsx-mode org-bullets which-key try use-package))))
+    (expand-region flow-minor-mode vterm helm-posframe doom-theme yaml-mode which-key use-package try treemacs-projectile solarized-theme scss-mode rjsx-mode prettier-js org-bullets move-text magit json-mode helm-projectile flycheck eslintd-fix eslint-fix elpy editorconfig doom-themes doom-modeline dashboard company-tern company-quickhelp centaur-tabs buffer-move blacken add-node-modules-path))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-
-
-(require 'package)
-(setq package-enable-at-startup nil)
-(add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/"))
-
-(package-initialize)
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-(org-babel-load-file (expand-file-name "~/.emacs.d/my-init.org"))
-
-;;(use-package buffer-move
-;;  :ensure t)

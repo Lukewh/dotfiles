@@ -1,0 +1,171 @@
+Super duper config
+
+* General setings
+
+** Don't show startup message
+   #+BEGIN_SRC emacs-lisp
+   (setq inhibit-startup-message t)
+   #+END_SRC
+
+** Don't show toolbar
+   #+BEGIN_SRC emacs-lisp
+   (tool-bar-mode -1)
+   #+END_SRC
+
+** Don't show menu
+   #+BEGIN_SRC emacs-lisp
+   (menu-bar-mode -1)
+   #+END_SRC
+
+** Don't show scrollbar
+   #+BEGIN_SRC emacs-lisp
+   (scroll-bar-mode -1)
+   #+END_SRC
+
+** Highlight line
+   #+BEGIN_SRC emacs-lisp
+   (global-hl-line-mode +1)
+   #+END_SRC
+
+** Delete selection
+   #+BEGIN_SRC emacs-lisp
+   (delete-selection-mode 1)
+   #+END_SRC
+
+** Different backup directory
+   #+BEGIN_SRC emacs-lisp
+   (setq backup-directory-alist '(("." . "~/.saves")))
+   #+END_SRC
+
+** Display line numbers when programming
+   #+BEGIN_SRC emacs-lisp
+   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+   #+END_SRC
+
+** Show matching parenthesis
+   #+BEGIN_SRC emacs-lisp
+   (show-paren-mode 1)
+   #+END_SRC
+
+** Bookmarks
+   Set bookmarks file
+   #+BEGIN_SRC emacs-lisp
+   (setq bookmark-default-file "~/.emacs.d/tut-bookmarks")
+   #+END_SRC
+
+   Save bookmarks when modified
+   #+BEGIN_SRC emacs-lisp
+   (setq bookmark-save-flag 1)
+   #+END_SRC
+
+* UI
+
+** Theme
+   #+BEGIN_SRC emacs-lisp
+   (use-package doom-themes
+     :ensure t
+     :config
+       (load-theme 'doom-one))
+   #+END_SRC
+
+** Modeline
+   #+BEGIN_SRC emacs-lisp
+   (use-package doom-modeline
+     :ensure t
+     :hook (after-init . doom-modeline-mode))
+   #+END_SRC
+
+** Icons
+   #+BEGIN_SRC emacs-lisp
+   (use-package all-the-icons
+     :ensure t)
+   #+END_SRC
+
+* Modes
+
+** IDO
+   #+BEGIN_SRC emacs-lisp
+   (setq ido-everywhere t)
+   (setq ido-enable-flex-matching t)
+   (ido-mode t)
+   #+END_SRC
+
+* General packages
+
+** Which key
+   #+BEGIN_SRC emacs-lisp
+   (use-package which-key
+     :ensure t
+     :config (which-key-mode))
+   #+END_SRC
+
+** Projectile
+   #+BEGIN_SRC emacs-lisp
+   (use-package projectile
+     :ensure t
+     :config
+     (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
+     (projectile-mode +1))
+   #+END_SRC
+
+** Dashboard
+   #+BEGIN_SRC emacs-lisp
+   (use-package dashboard
+     :ensure t
+     :init
+       (progn
+         (setq dashboard-items '((recents . 1)
+	                        (projects . 1)
+				(bookmarks . 2)))
+         (setq dashboard-show-shortcuts nil)
+	 (setq dashboard-center-content nil)
+	 (setq dashboard-banner-logo-title "Follow and Tip. Like and Subscribe")
+	 (setq dashboard-set-file-icons t)
+	 (setq dashboard-set-heading-icons t)
+	 (setq dashboard-startup-banner "~/Downloads/me.png")
+	 (setq dashboard-set-navigator nil)
+	 ;; Format: "(icon title help action face prefix suffix)"
+	 (setq dashboard-navigator-buttons
+           `(;; line1
+           ((,nil
+             "init file"
+             "Open init file"
+	     (lambda (&rest _) (find-file "~/.emacs.d/my-tut.org"))
+	   )))))
+     :config
+     (dashboard-setup-startup-hook))
+   #+END_SRC
+
+** Treemacs
+   #+BEGIN_SRC emacs-lisp
+   (use-package treemacs
+     :ensure t
+     :bind
+       (:map global-map
+         ([f8] . treemacs)
+         ("C-<f8>" . treemacs-select-window))
+     :config
+       (setq treemacs-is-never-other-window t))
+   #+END_SRC
+
+*** Treemacs Projectile
+    #+BEGIN_SRC emacs-lisp
+    (use-package treemacs-projectile
+      :after treemacs projectile
+      :ensure t)
+    #+END_SRC
+
+** Expand Region
+   #+BEGIN_SRC emacs-lisp
+   (use-package expand-region
+     :ensure t
+     :bind
+       ("C-=" . er/expand-region)
+       ("C--" . er/contract-region))
+   #+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(load-file "~/.emacs.d/named-term.el")
+
+(global-set-key (kbd "C-x t") 'named-term)
+#+END_SRC

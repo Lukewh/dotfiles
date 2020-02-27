@@ -1,0 +1,7 @@
+(defun named-term (name)
+  (interactive "sName: ")
+  (command-execute 'term)
+  (if (not (string= 'name ""))
+      (rename-buffer name)
+  )
+)
