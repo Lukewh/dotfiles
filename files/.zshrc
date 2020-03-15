@@ -81,8 +81,6 @@ source $ZSH/oh-my-zsh.sh
 # fi
 export VISUAL=vim
 export EDITOR="$VISUAL"
-export UPLOAD_ASSETS_API_DOMAIN=assets.ubuntu.com
-export UPLOAD_ASSETS_API_TOKEN=6d8a5d93-ef24-46db-b26a-a97dbb30b3af
 
 TZ='Europe/London'; export TZ
 
