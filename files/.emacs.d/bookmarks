@@ -3,7 +3,7 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("work.org"
- (filename . "~/work.org")
+ (filename . "~/org/work.org")
  (front-context-string . "* Things todo\n**")
  (rear-context-string)
  (position . 1))

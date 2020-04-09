@@ -28,10 +28,27 @@ markup=pango
 color=xresource:i3xrocks.value.color
 label_color=xresource:i3xrocks.label.color
 
+# Motivation
+[motivation]
+command=/home/luke/.config/i3blocks/scripts/motivation
+interval=900
+
 # Spotify
 [spotify]
 command=/home/luke/.config/i3blocks/scripts/spotify/spotify.py
 interval=5
+
+# Iteration
+[iteration_info]
+command=/home/luke/Projects/Canonical/iteration-scripts/iteration-status.py -summary
+label= 
+interval=7200
+
+# Prs
+[open_prs]
+command=/home/luke/Projects/Canonical/iteration-scripts/prs-block.sh $button
+label= 
+interval=900
 
 # Volume indicator
 #
@@ -88,7 +105,7 @@ interval=30
 #interval=10
 
 [wifi]
-command=/home/luke/.config/i3blocks/scripts/network/network.py
+command=/home/luke/.config/i3blocks/scripts/network/network
 #instance=wlp3s0
 interval=10
 
